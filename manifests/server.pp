@@ -19,17 +19,7 @@ class mysql::server {
         group    =>  mysql,
         mode     =>  644,
         content  =>  template("mysql/allow_external.cnf"),
-        require  =>  Package["mysql-server"],
-        notify   =>  Service["mysql"]
-    }
-
-    # Mysql service config
-    service { "mysql":
-        ensure      =>  running, #Garante que o servico sempre esteja rodando.
-        enable      =>  true,    #Garante inicializacao do servico sempre que o server e reiniciado.
-        hasstatus   =>  true,    #Informa que o servico possui status.
-        hasrestart  =>  true,    #Informa que o servico possui restart.
-        require     =>  Package["mysql-server"]
+        require  =>  Package["mysql-server"]
     }
 
     # Remove user anonymous mysql user 
