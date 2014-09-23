@@ -12,10 +12,10 @@ Um simples módulo Puppet para a instalação e configuração do serviço de ba
   Para utilizar esse módulo basta criar o projeto Vagrant na estrutura abaixo:
   
   <pre>
-    __root
-      |__ manifests
-      |__ modules
-      |__ vagranfile
+    --root
+      |-- manifests
+      |-- modules
+      |-- vagranfile
   </pre>
   
   No diretório root do projeto Vagrant, utilize o comando abaixo para baixar e adicionar o módulo a sua pasta de módulos.
