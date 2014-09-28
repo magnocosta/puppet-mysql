@@ -20,7 +20,7 @@ Um simples módulo Puppet para a instalação e configuração do serviço de ba
   
   No diretório root do projeto Vagrant, utilize o comando abaixo para baixar e adicionar o módulo a sua pasta de módulos.
     
-    git clone --recursive https://github.com/magnocosta/puppet-mysql.git modules/mysql
+    git clone https://github.com/magnocosta/puppet-mysql.git modules/mysql
     
   Adicione a linha abaixo no seu Vagrantfile, para dizer ao Puppet que a pasta modules possui módulos de extensão para seu projetos.
     
