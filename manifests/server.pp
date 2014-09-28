@@ -3,14 +3,15 @@
 
 class mysql::server {
 
-    exec { "apt-update":
-        command => "/usr/bin/apt-get update"
+    # Update the packages apt
+    exec { "apt-update-mysql":
+        command => "/usr/bin/apt-get update",
     }
 
     # Install mysql package
     package { "mysql-server":
-        ensure => installed,
-        require => Exec["apt-update"]
+        ensure  => installed,
+        require => Exec["apt-update-mysql"]
     }
 
     # Config external.cnf
@@ -27,7 +28,7 @@ class mysql::server {
         command    =>  "mysql -uroot -e \"DELETE FROM mysql.user WHERE user=’’; FLUSH PRIVILEGES\"",
         onlyif     =>  "mysql -u’ ’",
         path       =>  "/usr/bin",
-        require    =>  Service["mysql"],
+        require    =>  Package["mysql-server"],
     }
 
 }
